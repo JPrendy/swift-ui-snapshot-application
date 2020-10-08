@@ -61,3 +61,8 @@ How to manage releases in a repository [link](https://help.github.com/en/github/
 
 The following link provides helpful information
 - [link](https://github.com/JPrendy/template-repository).
+
+https://github.com/pointfreeco/swift-snapshot-testing
+https://www.vadimbulavin.com/snapshot-testing-swiftui-views/
+https://developer.apple.com/tutorials/swiftui/creating-and-combining-views
+https://www.youtube.com/watch?v=IIDiqgdn2yo

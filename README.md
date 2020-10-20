@@ -59,10 +59,21 @@ How to manage releases in a repository [link](https://help.github.com/en/github/
 
 ## Helpful resources
 
-The following link provides helpful information
-- [link](https://github.com/JPrendy/template-repository).
+The following links to a Swift snapshot library that you can use to take snapshots.
+- [link](https://github.com/pointfreeco/swift-snapshot-testing).
 
-https://github.com/pointfreeco/swift-snapshot-testing
+
 https://www.vadimbulavin.com/snapshot-testing-swiftui-views/
 https://developer.apple.com/tutorials/swiftui/creating-and-combining-views
 https://www.youtube.com/watch?v=IIDiqgdn2yo
+
+
+https://www.hackingwithswift.com/example-code/uikit/how-to-add-a-bar-button-to-a-navigation-bar
+https://cocoacasts.com/managing-view-controllers-with-container-view-controllers/
+
+Check out this test from swift snapshot testing
+testTableViewController
+https://github.com/pointfreeco/swift-snapshot-testing/blob/main/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L337
+
+testTraitsEmbeddedInTabNavigation
+https://github.com/pointfreeco/swift-snapshot-testing/blob/main/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L535

@@ -68,19 +68,19 @@ The following links to a guide on how you can take snapshots of SwiftUI views.
 The following links to a guide by Apple on how to create views in SwiftUI, it's a very handy guide.
 - [link](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views).
 
-The following links to a video tutorial for `SwiftUI Basics for Beginners`
+The following links to a video tutorial for `SwiftUI Basics for Beginners`.
 - [link](https://www.youtube.com/watch?v=IIDiqgdn2yo).
 
-The following links to a guide on how to add a bar button to a navigation bar
+The following links to a guide on how to add a bar button to a navigation bar.
 - [link](https://www.hackingwithswift.com/example-code/uikit/how-to-add-a-bar-button-to-a-navigation-bar).
 
-`N.B.` The following links to a guide on how view controllers works including how to update a view and adding a child view to a view controller
+`N.B.` The following links to a guide on how view controllers works including how to update a view and adding a child view to a view controller.
 - [link](https://cocoacasts.com/managing-view-controllers-with-container-view-controllers/).
 
-The following links to a test from `swift snapshot testing` called `testTableViewController`
+The following links to a test from `swift snapshot testing` called `testTableViewController`.
 - [link](https://github.com/pointfreeco/swift-snapshot-testing/blob/main/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L337
 ).
 
-The following links to a test from `swift snapshot testing` called `testTraitsEmbeddedInTabNavigation`
+The following links to a test from `swift snapshot testing` called `testTraitsEmbeddedInTabNavigation`.
 - [link](https://github.com/pointfreeco/swift-snapshot-testing/blob/main/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L535
 ).

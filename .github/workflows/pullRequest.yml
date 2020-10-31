@@ -14,27 +14,20 @@ jobs:
   build:
 
     runs-on: macos-10.15
-  #  runs-on: ubuntu-latest # need to use linux if we want to use the linter
-
+    
     steps:
     - uses: actions/checkout@v2
 
-    # Run Linter against code base, see https://github.com/github/super-linter for how the linter works
-    - name: Lint Code Base
-      if: ${{ runner.os == 'Linux'}}
-      uses: docker://github/super-linter:v2.0.0
-      env:
-        VALIDATE_ALL_CODEBASE: false
-        VALIDATE_MD: true
+    - name: Install Dependencies
+      run: bundle install    
 
     - name: Run tests
-      if: ${{ github.base_ref == 'master' }}
-      run: echo Github Actions template
+      run: bundle exec fastlane run_snapshots
 
     # Artifacts allow you to persist data like test results after a job has completed, see https://docs.github.com/en/actions/configuring-and-managing-workflows/persisting-workflow-data-using-artifacts for how the artifacts works
-    # - name: Upload Fastlane Test results
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #     name: Fastlane Test Results
-    #     path: fastlane/test_output    
+    - name: Upload Fastlane Test results
+      uses: actions/upload-artifact@v1
+      with:
+        name: Fastlane Test Results
+        path: fastlane/test_output//snapshots
 

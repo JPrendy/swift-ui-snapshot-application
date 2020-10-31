@@ -1,8 +1,8 @@
-# template-repository
+# swift ui snapshot application
 
 ## Description
 
-The existing repository is a template, I can generate new repositories with the same directory structure, branches, and files.
+A Swift Application that uses SwiftUI and uses the library `swift snapshot testing` to take snapshots
 
 ## Contents
 
@@ -15,16 +15,65 @@ The existing repository is a template, I can generate new repositories with the 
 
 ## Setup Steps
 
-```
-Code here
+To use the test tool `Swift-snapshot-tesing`, we first need to import the test dependency, the easiest way by using Swift Package Manager.
+
+Go to File then Swift Packages, then select Add Package Dependencies then add the Github url https://github.com/pointfreeco/swift-snapshot-testing to the `LandMarksUITests`.
+
+To add an environment variable to the scheme `LandMarksUITests`. See the following image
+
+<p><img src="images/environmentArguments.png" width=500"/></p>
+
+Then you want to go to `LandMarksUITests.swift` and add the following to the `setUp`, this will make it easy to determine when we want and don't want to record snapshot.
+
+```swift
+override func setUp(){
+    if ProcessInfo.processInfo.environment["SNAPSHOT_RECORD_MODE"] == "true" {
+    SnapshotTesting.isRecording = true
+    }
+}
 ```
 
-<p><img src="images/exampleImage.png" width="300"/></p>
+An example of a snapshot test that uses `Swift-snapshot-testing` is the one below, we define what device we want and what the end name of the image should be, so the image will be called `testTableViewController.iphone-8.png` when we record it.
+
+```swift
+func testTableViewController() {
+    class TableViewController: UITableViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = "\(indexPath.row)"
+        return cell
+    }
+    }
+    let tableViewController = TableViewController()
+    assertSnapshot(matching: tableViewController, as: .image(on: .iPhone8), named: "iphone-8")
+}
+```
+
+An example of a snapshot test assert than you can use to test different font sizes
+
+```swift
+assertSnapshot(matching: tableViewController, as: .image(on: .iPhone8, traits: .init(preferredContentSizeCategory: .extraLarge)), named: "iphone-8")
+```
 
 ## How to run the project locally
 
+To run the snapshot tests locally, run the following.
+
 ```
-Code here
+bundle exec fastlane run_snapshots
+```
+
+To record new snapshots locally, run the following.
+
+```
+bundle exec fastlane record_snapshots
 ```
 
 ## Tools
@@ -83,4 +132,12 @@ The following links to a test from `swift snapshot testing` called `testTableVie
 
 The following links to a test from `swift snapshot testing` called `testTraitsEmbeddedInTabNavigation`.
 - [link](https://github.com/pointfreeco/swift-snapshot-testing/blob/main/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L535
+).
+
+The following links to a test from `swift snapshot testing` that updates the size of the text, good for tests that test different font sizes.
+- [link](https://github.com/pointfreeco/swift-snapshot-testing/blob/7b8e0b26dfc0730869fa62ac954e9547bfd47dc5/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L521
+).
+
+The following links to how you set up `environment variable` in iOS, this setup is very helpful for testing.
+- [link](https://medium.com/@derrickho_28266/xcode-custom-environment-variables-681b5b8674ec
 ).

@@ -14,11 +14,11 @@ private let referenceSize = CGSize(width: 150, height: 50)
 class LandmarksUITests: XCTestCase {
     
     override func setUp(){
-      if ProcessInfo.processInfo.environment["SNAPSHOT_RECORD_MODE"] == "true" {
-        SnapshotTesting.isRecording = true
-      }
+        if ProcessInfo.processInfo.environment["SNAPSHOT_RECORD_MODE"] == "true" {
+            SnapshotTesting.isRecording = true
+        }
     }
-
+    
     func testDefaultAppearance() {
         assertSnapshot(matching: ContentView().referenceFrame(), as: .image)
     }
@@ -73,22 +73,41 @@ class LandmarksUITests: XCTestCase {
     }
     
     func testTableViewController() {
-      class TableViewController: UITableViewController {
-        override func viewDidLoad() {
-          super.viewDidLoad()
-          self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        class TableViewController: UITableViewController {
+            override func viewDidLoad() {
+                super.viewDidLoad()
+                self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+            }
+            override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return 10
+            }
+            override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+                cell.textLabel?.text = "\(indexPath.row)"
+                return cell
+            }
         }
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          return 10
+        let tableViewController = TableViewController()
+        assertSnapshot(matching: tableViewController, as: .image(on: .iPhone8), named: "iphone-8")
+    }
+    
+    func testTableViewControllerWithExtraLargeText() {
+        class TableViewController: UITableViewController {
+            override func viewDidLoad() {
+                super.viewDidLoad()
+                self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+            }
+            override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return 10
+            }
+            override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+                cell.textLabel?.text = "\(indexPath.row)"
+                return cell
+            }
         }
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-          cell.textLabel?.text = "\(indexPath.row)"
-          return cell
-        }
-      }
-      let tableViewController = TableViewController()
-      assertSnapshot(matching: tableViewController, as: .image(on: .iPhone8), named: "iphone-8")
+        let tableViewController = TableViewController()
+        assertSnapshot(matching: tableViewController, as: .image(on: .iPhone8, traits: .init(preferredContentSizeCategory: .extraLarge)), named: "iphone-8")
     }
 }
 

@@ -141,3 +141,7 @@ The following links to a test from `swift snapshot testing` that updates the siz
 The following links to how you set up `environment variable` in iOS, this setup is very helpful for testing.
 - [link](https://medium.com/@derrickho_28266/xcode-custom-environment-variables-681b5b8674ec
 ).
+
+The following links to a fix to the following error `The scheme 'LandmarksUITests' has nothing configured to build for Running and has no executable specified to Run. Edit the scheme to configure the Run action.`
+- [link](https://stackoverflow.com/a/41953023
+).

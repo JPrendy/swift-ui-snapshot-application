@@ -59,21 +59,28 @@ How to manage releases in a repository [link](https://help.github.com/en/github/
 
 ## Helpful resources
 
-The following links to a Swift snapshot library that you can use to take snapshots.
+The following links to a Swift snapshot library called `swift snapshot testing` that you can use to take snapshots.
 - [link](https://github.com/pointfreeco/swift-snapshot-testing).
 
+The following links to a guide on how you can take snapshots of SwiftUI views.
+- [link](https://www.vadimbulavin.com/snapshot-testing-swiftui-views/).
 
-https://www.vadimbulavin.com/snapshot-testing-swiftui-views/
-https://developer.apple.com/tutorials/swiftui/creating-and-combining-views
-https://www.youtube.com/watch?v=IIDiqgdn2yo
+The following links to a guide by Apple on how to create views in SwiftUI, it's a very handy guide.
+- [link](https://developer.apple.com/tutorials/swiftui/creating-and-combining-views).
 
+The following links to a video tutorial for `SwiftUI Basics for Beginners`
+- [link](https://www.youtube.com/watch?v=IIDiqgdn2yo).
 
-https://www.hackingwithswift.com/example-code/uikit/how-to-add-a-bar-button-to-a-navigation-bar
-https://cocoacasts.com/managing-view-controllers-with-container-view-controllers/
+The following links to a guide on how to add a bar button to a navigation bar
+- [link](https://www.hackingwithswift.com/example-code/uikit/how-to-add-a-bar-button-to-a-navigation-bar).
 
-Check out this test from swift snapshot testing
-testTableViewController
-https://github.com/pointfreeco/swift-snapshot-testing/blob/main/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L337
+`N.B.` The following links to a guide on how view controllers works including how to update a view and adding a child view to a view controller
+- [link](https://cocoacasts.com/managing-view-controllers-with-container-view-controllers/).
 
-testTraitsEmbeddedInTabNavigation
-https://github.com/pointfreeco/swift-snapshot-testing/blob/main/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L535
+The following links to a test from `swift snapshot testing` called `testTableViewController`
+- [link](https://github.com/pointfreeco/swift-snapshot-testing/blob/main/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L337
+).
+
+The following links to a test from `swift snapshot testing` called `testTraitsEmbeddedInTabNavigation`
+- [link](https://github.com/pointfreeco/swift-snapshot-testing/blob/main/Tests/SnapshotTestingTests/SnapshotTestingTests.swift#L535
+).

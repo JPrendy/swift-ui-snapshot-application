@@ -111,6 +111,9 @@ How to manage releases in a repository [link](https://help.github.com/en/github/
 The following links to a Swift snapshot library called `swift snapshot testing` that you can use to take snapshots.
 - [link](https://github.com/pointfreeco/swift-snapshot-testing).
 
+The following links to a good tutorial on how to use `swift snapshot testing`.
+- [link](https://www.raywenderlich.com/24426963-snapshot-testing-tutorial-for-swiftui-getting-started#toc-anchor-001).
+
 The following links to a guide on how you can take snapshots of SwiftUI views.
 - [link](https://www.vadimbulavin.com/snapshot-testing-swiftui-views/).
 

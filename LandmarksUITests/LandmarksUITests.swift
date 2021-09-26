@@ -91,6 +91,45 @@ class LandmarksUITests: XCTestCase {
         assertSnapshot(matching: tableViewController, as: .image(on: .iPhone8), named: "iphone-8")
     }
     
+    func testTableViewControllerDarkMode() {
+        class TableViewController: UITableViewController {
+            override func viewDidLoad() {
+                super.viewDidLoad()
+                self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+            }
+            override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return 10
+            }
+            override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+                cell.textLabel?.text = "\(indexPath.row)"
+                return cell
+            }
+        }
+        let tableViewController = TableViewController()
+        let traitDarkMode = UITraitCollection(userInterfaceStyle: .dark)
+        assertSnapshot(matching: tableViewController, as: .image(on: .iPhone8,traits: traitDarkMode), named: "iphone-8")
+    }
+    
+    func testTableViewControllerLandscape() {
+        class TableViewController: UITableViewController {
+            override func viewDidLoad() {
+                super.viewDidLoad()
+                self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+            }
+            override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return 10
+            }
+            override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+                cell.textLabel?.text = "\(indexPath.row)"
+                return cell
+            }
+        }
+        let tableViewController = TableViewController()
+        assertSnapshot(matching: tableViewController, as: .image(on: .iPhone8(.landscape)), named: "iphone-8")
+    }
+    
     func testTableViewControllerWithExtraLargeText() {
         class TableViewController: UITableViewController {
             override func viewDidLoad() {

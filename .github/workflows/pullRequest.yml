@@ -14,6 +14,9 @@ jobs:
   build:
 
     runs-on: macos-11
+    environment: 
+      name: production
+      url: https://github.com
     
     steps:
     - uses: actions/checkout@v2

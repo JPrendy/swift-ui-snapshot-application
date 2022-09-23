@@ -15,7 +15,7 @@
 
 default_platform(:ios)
 
-xcversion(version: "~> 14.0")
+xcversion(version: "~> 14.0.1")
 
 platform :ios do
   desc "The following lane runs the snapshot tests"

@@ -8,7 +8,6 @@
 import XCTest
 import SnapshotTesting
 import SwiftUI
-
 private let referenceSize = CGSize(width: 150, height: 50)
 
 class LandmarksUITests: XCTestCase {

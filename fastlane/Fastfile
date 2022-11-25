@@ -16,7 +16,7 @@
 default_platform(:ios)
 
 # xcodes(version: "14.1")
-xcode_select("/Applications/Xcode-14.1.app")
+xcode_select("/Applications/Xcode_14.1.app")
 
 platform :ios do
   desc "The following lane runs the snapshot tests"

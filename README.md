@@ -148,3 +148,6 @@ The following links to how you set up `environment variable` in iOS, this setup 
 The following links to a fix to the following error `The scheme 'LandmarksUITests' has nothing configured to build for Running and has no executable specified to Run. Edit the scheme to configure the Run action.`
 - [link](https://stackoverflow.com/a/41953023
 ).
+
+The following links to how use `xcode_select`, which change the xcode-path to use. Useful for beta versions of Xcode. Good to use instead of `xcversion`, as it has been deprecated by Fastlane and will show an error message in the logs.
+- [link](https://docs.fastlane.tools/actions/xcode_select/).
